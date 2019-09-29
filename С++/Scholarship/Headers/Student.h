@@ -2,6 +2,9 @@
 #include <string>
 #include "Session.h"
 
+#ifndef SCHOLARSHIP_STUDENT_H
+#define SCHOLARSHIP_STUDENT_H
+
 class Student : public Session {
 private:
     int group;
@@ -12,11 +15,11 @@ private:
 public:
     const std::string &getSpecialty() const;
     void setSpecialty(const std::string &specialty);
-    Student(int group = 0, const std::string specialty = "0", const std::string &name = "0", bool privilege = false, int scholarship = 0,
+    Student(int group = 0, const std::string &specialty = "0", const std::string &name = "0", bool privilege = false, int scholarship = 0,
             bool debt = false, int mark = 0) : Session(debt, mark),
             group(group), specialty(specialty), name(name), privilege(privilege), scholarship(scholarship){}
     Student(const Student&);
-    ~Student(){};
+    ~Student() = default;;
 
     int getGroup() const;
     void setGroup(int group);
@@ -30,3 +33,5 @@ public:
     friend std::istream& operator >> (std::istream& is, Student& obj);
     friend std::ostream& operator << (std::ostream& os, Student& obj);
 };
+
+#endif
