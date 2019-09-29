@@ -99,7 +99,7 @@ void File<T>::saveStudent(List<T>& list, const char *file) {
 }
 
 template<class T>
-void File<T>::saveUndergrauate(List<T>& list, const char *file) {
+void File<T>::saveUndergraduate(List<T>& list, const char *file) {
     std::ofstream on;
     on.open(file, std::ios::in | std::ios_base::trunc);
     if (!on.is_open()) {

@@ -1,0 +1,13 @@
+#ifndef SCHOLARSHIP_LISTEXCEPTION_H
+#define SCHOLARSHIP_LISTEXCEPTION_H
+
+#include "MyException.h"
+
+class ListException : MyException {
+public:
+    ListException(int code = 0) : MyException(code) {};
+    void ErrorText();
+};
+
+
+#endif //SCHOLARSHIP_LISTEXCEPTION_H

@@ -18,7 +18,7 @@ protected:
     int amount;
 public:
     List() { head = nullptr; tail = nullptr; amount = 0; }
-    ~List() { while (head) { this->popHead(); } }
+    ~List();
 
     //Длина списка
     int size() { return this->amount; }
@@ -30,6 +30,7 @@ public:
     Node<T>* begin();
     Node<T>* end();
     void output();
+
 
     class MyIterator {
         Node<T> *current;

@@ -115,3 +115,6 @@ void List<T>::output() {
         i++;
     }
 }
+
+template<class T>
+List<T>::~List() { while (this->head) { this->popHead(); } }

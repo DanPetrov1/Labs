@@ -5,7 +5,8 @@
 
 template <class T>
 class File {
-    File() = default;;
+public:
+    File() = default;
     ~File() = default;;
 
     void openStudent(List<T>& list, const char *file);
@@ -13,7 +14,7 @@ class File {
     void openGraduate(List<T>& list, const char *file);
 
     void saveStudent(List<T>& list, const char *file);
-    void saveUndergrauate(List<T>& list, const char *file);
+    void saveUndergraduate(List<T>& list, const char *file);
     void saveGraduate(List<T>& list, const char *file);
 };
 
