@@ -41,9 +41,7 @@ class Iterator {
 public:
     Iterator() { current = nullptr; }
 
-    explicit Iterator(List<T> &container) { current = container.head; }
     Iterator(Iterator &iter) { current = iter.current; }
-    explicit Iterator(Node<T> *node) { current = node; }
     ~Iterator() = default;
     // Получение узла из итератора
     Node<T>* getNode() { return current; }

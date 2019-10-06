@@ -17,24 +17,24 @@ template<class T>
 class Interface {
 public:
     static void menu(List<T>& list);
-    static void add(List<T>& list, std::vector<T>& returnPrev, std::vector<int>& action);
-    static void remove(List<T> &list, std::vector<T> &returnPrev, std::vector<int> &action);
-    static void update(List<T> &list, std::vector<T> &returnPrev, std::vector<int> &action, std::vector<int> &place);
-    static void sort(List<T> &list, std::vector<T> &returnPrev, std::vector<int> &action, std::vector<int> &place);
-    static void cancel(List<T>& list, std::vector<T>& returnPrev, std::vector<int>& action, std::vector<int>& place);
-    static void line(int size)
+    static void add(List<T>& list, std::vector<T>& previous, std::vector<int>& action);
+    static void remove(List<T> &list, std::vector<T> &previous, std::vector<int> &action);
+    static void update(List<T> &list, std::vector<T> &previous, std::vector<int> &action, std::vector<int> &place);
+    static void sort(List<T> &list);
+    static void cancel(List<T>& list, std::vector<T>&previous, std::vector<int>& action, std::vector<int>& place);
+    /*static void line(int size)
     {
         std::cout << std::setfill('-') << std::setw(size) << "" << std::endl;
         std::cout << std::setfill(' ');
-    }
+    }*/
 };
 
 template<class T>
-void Interface<T>::add(List<T>& list, std::vector<T>& returnPrev, std::vector<int>& action) {
+void Interface<T>::add(List<T>& list, std::vector<T>& previous, std::vector<int>& action) {
     T tmp;
     std::cin >> tmp;
     list.pushTail(tmp);
-    returnPrev.insert(returnPrev.end(), tmp);
+    previous.insert(previous.end(), tmp);
     action.insert(action.end(), 1);
 }
 
@@ -69,7 +69,7 @@ void Interface<T>::update(List<T> &list, std::vector<T> &returnPrev, std::vector
 }
 
 template<class T>
-void Interface<T>::sort(List<T> &list, std::vector<T> &returnPrev, std::vector<int> &action, std::vector<int> &place) {
+void Interface<T>::sort(List<T> &list) {
     if (!list.size()) {
         throw ListException(1);
     }
@@ -161,7 +161,7 @@ void Interface<T>::menu(List<T>& list) {
                 }
                 case 6: //Отсортировать список студентов
                 {
-                    Interface<T>::sort(list, ReturnPrev, action, place);
+                    Interface<T>::sort(list);
                     break;
                 }
             }
