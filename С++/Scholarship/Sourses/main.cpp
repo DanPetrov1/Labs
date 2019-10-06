@@ -7,7 +7,7 @@
 #include "../Headers/InputError.h"
 #include "../Headers/Interface.h"
 
-int main(void) {
+int main() {
     List<Student> students;
     List<UndergraduateStudent> undergraduateStudents;
     List<GraduateStudent> graduateStudents;
@@ -15,7 +15,6 @@ int main(void) {
     File<UndergraduateStudent> fus;
     File<GraduateStudent> fgs;
     int select = 0;
-    system("cls");
     std::cout << "Вас приветствует информационная система университета!" << std::endl;
     std::cout << "Выберите тип студентов, с которыми хотите работать : " << std::endl;
     std::cout << "1. Студенты бакалавриата" << std::endl;
@@ -23,33 +22,28 @@ int main(void) {
     std::cout << "3. Студенты аспирантуры" << std::endl;
     std::cout << "0. Выход из программы" << std::endl;
     select = InputError::Input(0, 3);
-    /*switch (select)
-    {
+    switch (select) {
         case 1: //Работа с обычными студентами
         {
             fs.openStudent(students, "students.txt");
             Interface<Student>::menu(students);
+            fs.saveStudent(students, "students.txt");
             break;
         }
         case 2: //Работа со студентами магистратуры
         {
             fus.openUndergraduate(undergraduateStudents, "undergraduateStudents.txt");
             Interface<UndergraduateStudent>::menu(undergraduateStudents);
+            fus.saveUndergraduate(undergraduateStudents, "undergraduateStudents.txt");
             break;
         }
         case 3: //Работа со студентами аспирантуры
         {
             fgs.openGraduate(graduateStudents, "graduateStudents.txt");
             Interface<GraduateStudent>::menu(graduateStudents);
+            fgs.saveGraduate(graduateStudents, "graduateStudents.txt");
             break;
         }
-        case 0: //Выход из программы
-        {
-            fs.saveStudent(students, "students.txt");
-            fus.saveUndergraduate(undergraduateStudents, "undergraduateStudents.txt");
-            fgs.saveGraduate(graduateStudents, "graduateStudents.txt");
-            return 0;
-        }
-    }*/
+    }
     return 0;
 }

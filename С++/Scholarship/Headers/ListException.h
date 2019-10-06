@@ -5,7 +5,7 @@
 
 class ListException : MyException {
 public:
-    ListException(int code = 0) : MyException(code) {};
+    explicit ListException(int code = 0) : MyException(code) {};
     void ErrorText();
 };
 

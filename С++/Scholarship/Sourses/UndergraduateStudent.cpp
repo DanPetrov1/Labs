@@ -4,7 +4,8 @@
 
 UndergraduateStudent::UndergraduateStudent(int group, const std::string &specialty, const std::string &name,
                                                 bool privilege, int scholarship, const std::string &undergraduationType,
-                                                const bool &debt, int mark) : Session(debt, mark), group(group),
+                                                const bool &debt, int number, std::string subjectName, int mark) :
+                                                                Session(debt, number, subjectName, mark), group(group),
                                                                                      specialty(specialty), name(name),
                                                                                      privilege(privilege),
                                                                                      scholarship(scholarship),
@@ -38,17 +39,18 @@ void UndergraduateStudent::setUndergraduationType(const std::string &undergradua
 }
 
 std::ostream &operator<<(std::ostream &os, UndergraduateStudent &student) {
-    os << "|" << std::setw(11) << student.specialty;
-    os << "|" << std::setw(11) << student.group;
-    os << "|" << std::setw(11) << student.name;
-    os << "|" << std::setw(11) << student.undergraduationType;
+    os << "|" << std::setw(15) << student.specialty;
+    os << "|" << std::setw(7) << student.group;
+    os << "|" << std::setw(30) << student.name;
+    os << "|" << std::setw(15) << student.undergraduationType;
     os << dynamic_cast<Session&>(student);
-    os << "|" << std::setw(11) << student.privilege;
-    os << "|" << std::setw(11) << student.scholarship << "$|";
+    os << "|" << std::setw(2) << student.privilege;
+    os << "|" << std::setw(5) << student.scholarship << "$|";
     return os;
 }
 
 std::istream &operator>>(std::istream &is, UndergraduateStudent &student) {
+    is.get();
     std::cout << "Введите специальность: ";
     getline(is, student.specialty);
     std::cout << "Введите № группы: ";

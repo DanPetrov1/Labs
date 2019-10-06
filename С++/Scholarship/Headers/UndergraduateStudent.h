@@ -6,15 +6,16 @@
 
 class UndergraduateStudent : public Session { //Класс студента магистратуры
 private:
-    int group;
-    std::string specialty;
-    std::string name;
-    bool privilege;
-    int scholarship;
-    std::string undergraduationType;
+    int group = 0;
+    std::string specialty = "0";
+    std::string name = "0";
+    bool privilege = false;
+    int scholarship = 0;
+    std::string undergraduationType = "0";
 public:
+    UndergraduateStudent():Session(false, 0, "0", 0){};
     UndergraduateStudent(int group, const std::string &specialty, const std::string &name, bool privilege,
-            int scholarship, const std::string &undergraduationType, const bool &debt, int mark);
+            int scholarship, const std::string &undergraduationType, const bool &debt, int number,  std::string subjectName, int mark);
     ~UndergraduateStudent() = default;
 
     int getGroup() const;
@@ -32,6 +33,8 @@ public:
 
     friend std::istream &operator>>(std::istream &is, UndergraduateStudent &student);
     friend std::ostream &operator<<(std::ostream &os, UndergraduateStudent &student);
+
+    static void table() {};
 };
 
 

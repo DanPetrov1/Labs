@@ -5,16 +5,17 @@
 
 class GraduateStudent : public Session { //Класс студента аспирантуры
 private:
-    int group;
-    std::string specialty;
-    std::string name;
-    bool privilege;
-    int scholarship;
-    int numberOfPublications;
-    std::string specialSkills;
+    int group = 0;
+    std::string specialty = "0";
+    std::string name = "0";
+    bool privilege = false;
+    int scholarship = 0;
+    int numberOfPublications = 0;
+    std::string specialSkills = "0";
 public:
+    GraduateStudent() : Session(false, 0, "0", 0){};
     GraduateStudent(int group, const std::string &specialty, const std::string &name, bool privilege, int scholarship,
-            int numberOfPublications, const std::string &specialSkills, const bool &debt, int mark);
+            int numberOfPublications, const std::string &specialSkills, const bool &debt, int number, std::string subjectName, int mark);
     ~GraduateStudent() = default;
 
     int getGroup() const;
@@ -34,6 +35,8 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, GraduateStudent &student);
     friend std::istream &operator>>(std::istream &is, GraduateStudent &student);
+
+    static void table() {};
 };
 
 

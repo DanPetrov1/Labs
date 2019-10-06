@@ -4,15 +4,14 @@
 
 GraduateStudent::GraduateStudent(int group, const std::string &specialty, const std::string &name, bool privilege,
                                     int scholarship, int numberOfPublications, const std::string &specialSkills,
-                                 const bool &debt, int mark) : Session(debt, mark), group(group),
+                                 const bool &debt, int number, std::string subjectName, int mark) : Session(debt, number,
+                                                                     subjectName, mark), group(group),
                                                                      specialty(specialty), name(name),
                                                                      privilege(privilege), scholarship(scholarship),
                                                                      numberOfPublications(numberOfPublications),
                                                                      specialSkills(specialSkills) {}
 
 int GraduateStudent::getGroup() const { return this->group; }
-
-void GraduateStudent::setGroup(int group) { this->group = group; }
 
 const std::string &GraduateStudent::getSpecialty() const { return this->specialty; }
 
@@ -39,18 +38,19 @@ const std::string &GraduateStudent::getSpecialSkills() const { return this->spec
 void GraduateStudent::setSpecialSkills(const std::string &specialSkills) { this->specialSkills = specialSkills; }
 
 std::ostream &operator<<(std::ostream &os, GraduateStudent &student) {
-    os << "|" << std::setw(11) << student.specialty;
-    os << "|" << std::setw(11) << student.group;
-    os << "|" << std::setw(11) << student.name;
-    os << "|" << std::setw(11) << student.specialSkills;
-    os << "|" << std::setw(11) << student.numberOfPublications;
+    os << "|" << std::setw(15) << student.specialty;
+    os << "|" << std::setw(7) << student.group;
+    os << "|" << std::setw(25) << student.name;
+    os << "|" << std::setw(15) << student.specialSkills;
+    os << "|" << std::setw(3) << student.numberOfPublications;
     os << dynamic_cast<Session&>(student);
-    os << "|" << std::setw(11) << student.privilege;
-    os << "|" << std::setw(11) << student.scholarship << "$|";
+    os << "|" << std::setw(2) << student.privilege;
+    os << "|" << std::setw(5) << student.scholarship << "$|";
     return os;
 }
 
 std::istream &operator>>(std::istream &is, GraduateStudent &student) {
+    is.get();
     std::cout << "Введите специальность: ";
     getline(is, student.specialty);
     std::cout << "Введите № группы: ";
@@ -95,5 +95,9 @@ std::istream &operator>>(std::istream &is, GraduateStudent &student) {
         }
     }
     return  is;
+}
+
+void GraduateStudent::setGroup(int group) {
+    this->group = group;
 }
 
