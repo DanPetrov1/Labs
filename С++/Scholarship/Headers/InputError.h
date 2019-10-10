@@ -8,10 +8,10 @@
 class InputError : public MyException {
 public:
     explicit InputError(int code = 0) : MyException(code) {};
-    void ErrorText() override;
-    static int Input(int min, int max);
-    static std::string InputNumber();
-    static void RightNumber(std::string input) noexcept(false);
+    void errorText() override;
+    static int input(int min, int max);
+    static std::string inputNumber();
+    static void rightNumber(std::string input) noexcept(false);
 };
 
 #endif

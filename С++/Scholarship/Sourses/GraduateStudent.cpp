@@ -4,30 +4,12 @@
 
 GraduateStudent::GraduateStudent(int group, const std::string &specialty, const std::string &name, bool privilege,
                                     int scholarship, int numberOfPublications, const std::string &specialSkills,
-                                 const bool &debt, int number, std::string subjectName, int mark) : Session(debt, number,
-                                                                     subjectName, mark), group(group),
-                                                                     specialty(specialty), name(name),
-                                                                     privilege(privilege), scholarship(scholarship),
+                                 const bool &debt, int number, std::string subjectName, int mark) : Student(group, specialty,
+                                                                     name, privilege, scholarship,debt, number,
+                                                                     subjectName, mark),
                                                                      numberOfPublications(numberOfPublications),
                                                                      specialSkills(specialSkills) {}
 
-int GraduateStudent::getGroup() const { return this->group; }
-
-const std::string &GraduateStudent::getSpecialty() const { return this->specialty; }
-
-void GraduateStudent::setSpecialty(const std::string &specialty) { this->specialty = specialty; }
-
-const std::string &GraduateStudent::getName() const { return this->name; }
-
-void GraduateStudent::setName(const std::string &name) { this->name = name; }
-
-bool GraduateStudent::isPrivilege() const { return this->privilege; }
-
-void GraduateStudent::setPrivilege(bool privilege) { this->privilege = privilege; }
-
-int GraduateStudent::getScholarship() const { return this->scholarship; }
-
-void GraduateStudent::setScholarship(int scholarship) { this->scholarship = scholarship; }
 
 int GraduateStudent::getNumberOfPublications() const { return this->numberOfPublications; }
 
@@ -38,14 +20,9 @@ const std::string &GraduateStudent::getSpecialSkills() const { return this->spec
 void GraduateStudent::setSpecialSkills(const std::string &specialSkills) { this->specialSkills = specialSkills; }
 
 std::ostream &operator<<(std::ostream &os, GraduateStudent &student) {
-    os << "|" << std::setw(15) << student.specialty;
-    os << "|" << std::setw(7) << student.group;
-    os << "|" << std::setw(25) << student.name;
+    os << dynamic_cast<Student&>(student);
     os << "|" << std::setw(15) << student.specialSkills;
     os << "|" << std::setw(3) << student.numberOfPublications;
-    os << dynamic_cast<Session&>(student);
-    os << "|" << std::setw(2) << student.privilege;
-    os << "|" << std::setw(5) << student.scholarship << "$|";
     return os;
 }
 
@@ -54,17 +31,17 @@ std::istream &operator>>(std::istream &is, GraduateStudent &student) {
     std::cout << "Введите специальность: ";
     getline(is, student.specialty);
     std::cout << "Введите № группы: ";
-    student.group = InputError::Input(100000, 999999);
+    student.group = InputError::input(100000, 999999);
     is.get();
     std::cout << "Введите ФИО студента: ";
     getline(is, student.name);
     std::cout << "Введите особые умения студента: ";
     getline(is, student.specialSkills);
     std::cout << "Введите количество публикаций: ";
-    student.numberOfPublications = InputError::Input(0, 10000);
+    student.numberOfPublications = InputError::input(0, 10000);
     student.scholarship = student.scholarship + 20 * student.numberOfPublications;
     std::cout << "Есть ли льготы у студента? (1. Да. 2. Нет.) ";
-    student.privilege = static_cast<bool>(InputError::Input(1, 2) % 2);
+    student.privilege = static_cast<bool>(InputError::input(1, 2) % 2);
     if (student.privilege) {
         student.scholarship += 250;
     }
@@ -95,9 +72,5 @@ std::istream &operator>>(std::istream &is, GraduateStudent &student) {
         }
     }
     return  is;
-}
-
-void GraduateStudent::setGroup(int group) {
-    this->group = group;
 }
 

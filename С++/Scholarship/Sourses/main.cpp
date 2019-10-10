@@ -21,7 +21,7 @@ int main() {
     std::cout << "2. Студенты магистратуры" << std::endl;
     std::cout << "3. Студенты аспирантуры" << std::endl;
     std::cout << "0. Выход из программы" << std::endl;
-    select = InputError::Input(0, 3);
+    select = InputError::input(0, 3);
     switch (select) {
         case 1: //Работа с обычными студентами
         {

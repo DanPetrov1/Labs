@@ -2,7 +2,7 @@
 #include <stdio_ext.h>
 using namespace std;
 
-void InputError::ErrorText()
+void InputError::errorText()
 {
     cout << "Ошибка ввода (код " << this->code << "): ";
     switch (this->code)
@@ -29,7 +29,7 @@ void InputError::ErrorText()
             break;
     }
 }
-int InputError::Input(int min, int max)
+int InputError::input(int min, int max)
 {
     bool flag = true;
     int value;
@@ -56,7 +56,7 @@ int InputError::Input(int min, int max)
         catch (InputError e)
         {
             __fpurge(stdin);
-            e.ErrorText();
+            e.errorText();
             cin.sync();
             cin.clear();
         }
@@ -70,7 +70,7 @@ int InputError::Input(int min, int max)
     } while (!flag);
     return value;
 }
-void InputError::RightNumber(string input) noexcept(false) {
+void InputError::rightNumber(string input) noexcept(false) {
     cin.clear();
     __fpurge(stdin);
     int len = input.length();
@@ -88,7 +88,7 @@ void InputError::RightNumber(string input) noexcept(false) {
         throw InputError(2);
     }
 }
-string InputError::InputNumber()
+string InputError::inputNumber()
 {
     string input;
     try
@@ -97,14 +97,14 @@ string InputError::InputNumber()
         cin.sync();
         cin.clear();
         cin >> input;
-        RightNumber(input);
+        rightNumber(input);
     }
     catch (InputError e)
     {
-        e.ErrorText();
+        e.errorText();
         cin.clear();
         cin.sync();
-        input = InputNumber();
+        input = inputNumber();
     }
     __fpurge(stdin);
     return input;

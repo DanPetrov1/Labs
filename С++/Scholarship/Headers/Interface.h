@@ -6,7 +6,7 @@
 #include "../Headers/GraduateStudent.h"
 #include "../Headers/File.h"
 #include "../Headers/List.h"
-#include "../Headers/InputError.h"
+#include "InputError.h"
 #include "../Headers/MyException.h"
 #include "../Headers/ListException.h"
 #include <vector>
@@ -22,11 +22,6 @@ public:
     static void update(List<T> &list, std::vector<T> &previous, std::vector<int> &action, std::vector<int> &place);
     static void sort(List<T> &list);
     static void cancel(List<T>& list, std::vector<T>&previous, std::vector<int>& action, std::vector<int>& place);
-    /*static void line(int size)
-    {
-        std::cout << std::setfill('-') << std::setw(size) << "" << std::endl;
-        std::cout << std::setfill(' ');
-    }*/
 };
 
 template<class T>
@@ -59,7 +54,7 @@ void Interface<T>::update(List<T> &list, std::vector<T> &returnPrev, std::vector
     list.output();
     std::cout << std::endl;
     std::cout << "Введите номер изменяемого студента : ";
-    int tempNum = InputError::Input(1, list.size());
+    int tempNum = InputError::input(1, list.size());
     T tmp;
     std::cin >> tmp;
     returnPrev.insert(returnPrev.end(), list[tempNum - 1]);
@@ -77,7 +72,7 @@ void Interface<T>::sort(List<T> &list) {
     list.output();
     std::cout << std::endl;
     std::cout << "Выберите по какому признаку отсортировать: (1. ФИО. 2. № группы. 3. Размер стипендии.) ";
-    int type = InputError::Input(1, 3);
+    int type = InputError::input(1, 3);
     list.sort(type);
 }
 
@@ -126,7 +121,7 @@ void Interface<T>::menu(List<T>& list) {
         std::cout << "6. Отсортировать список студентов" << std::endl;
         std::cout << "0. Выход из программы" << std::endl;
         try {
-            select = InputError::Input(0, 6);
+            select = InputError::input(0, 6);
             switch (select) {
                 case 1: //Добавить студента
                 {
@@ -167,7 +162,7 @@ void Interface<T>::menu(List<T>& list) {
             }
         }
         catch (ListException e) {
-            e.ErrorText();
+            e.errorText();
             std::cin.sync();
             std::cin.clear();
             __fpurge(stdin);

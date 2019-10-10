@@ -1,6 +1,6 @@
 #include "../Headers/ListException.h"
 
-void ListException::ErrorText()
+void ListException::errorText()
 {
     std::cout << "Ошибка (код " << code << "): " << std::endl;
     switch (code)

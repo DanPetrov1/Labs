@@ -8,7 +8,7 @@
 #define SCHOLARSHIP_STUDENT_H
 
 class Student : public Session {
-private:
+protected:
     int group = 0;
     std::string specialty = "0";
     std::string name = "0";

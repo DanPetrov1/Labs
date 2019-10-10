@@ -8,7 +8,7 @@ std::istream &operator>>(std::istream &is, Subject& sub) {
     is.get();
     getline(is, sub.subjectName);
     std::cout << "Введите оценку по предмету: ";
-    sub.mark = InputError::Input(0, 10);
+    sub.mark = InputError::input(0, 10);
     return is;
 }
 

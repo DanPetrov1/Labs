@@ -29,9 +29,9 @@ std::ostream &operator<<(std::ostream &os, Session &session) {
 
 std::istream &operator>>(std::istream &is, Session &session) {
     std::cout << "Есть ли задолженности у студента? (1. Да. 2. Нет.) ";
-    session.debt = static_cast<bool>(InputError::Input(1, 2) % 2);
+    session.debt = static_cast<bool>(InputError::input(1, 2) % 2);
     std::cout << "Введите номер сессии: ";
-    session.number = InputError::Input(1, 10);
+    session.number = InputError::input(1, 10);
     is >> dynamic_cast<Subject&>(session);
     return is;
 }

@@ -186,11 +186,9 @@ Node<T>* List<T>::end() {
 // Вывод на экран содержимого списка
 template<class T>
 void List<T>::output() {
-    setlocale(LC_ALL, "");
-    std::cout.setf(std::ios::left, std::ios::adjustfield);
     int i = 0;
     for (Node<T> *node = head; node != nullptr; node = node->next) {
-        std::cout/* << std::left << std::setfill(' ')*/ << "|" << std::setw(3) << i + 1 << node->data;
+        std::cout << std::left << "|" << std::setw(3) << i + 1 << node->data;
         std::cout << std::endl;
         i++;
     }

@@ -41,12 +41,12 @@ std::istream &operator>>(std::istream &is, Student &obj) {
     std::cout << "Введите специальность: ";
     getline(is, obj.specialty);
     std::cout << "Введите № группы: ";
-    obj.group = InputError::Input(100000, 999999);
+    obj.group = InputError::input(100000, 999999);
     is.get();
     std::cout << "Введите ФИО студента: ";
     getline(is, obj.name);
     std::cout << "Есть ли льготы у студента? (1. Да. 2. Нет.) ";
-    obj.privilege = static_cast<bool>(InputError::Input(1, 2) % 2);
+    obj.privilege = static_cast<bool>(InputError::input(1, 2) % 2);
     if (obj.privilege) {
         obj.scholarship += 100;
     }
