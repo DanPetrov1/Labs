@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/dan/CLionProjects/Scholarship/Headers/GraduateStudent.h
-Student.h
-/home/dan/CLionProjects/Scholarship/Headers/Student.h
-
 /home/dan/CLionProjects/Scholarship/Headers/InputError.h
 iostream
 -
@@ -42,27 +38,35 @@ Session.h
 string
 -
 
-/home/dan/CLionProjects/Scholarship/Headers/UndergraduateStudent.h
-ostream
+/home/dan/CLionProjects/Scholarship/Sourses/Session.cpp
+iostream
 -
-Session.h
-/home/dan/CLionProjects/Scholarship/Headers/Session.h
-Student.h
-/home/dan/CLionProjects/Scholarship/Headers/Student.h
-
-/home/dan/CLionProjects/Scholarship/Sourses/GraduateStudent.cpp
 iomanip
 -
-../Headers/GraduateStudent.h
-/home/dan/CLionProjects/Scholarship/Headers/GraduateStudent.h
+../Headers/Session.h
+/home/dan/CLionProjects/Scholarship/Headers/Session.h
 ../Headers/InputError.h
 /home/dan/CLionProjects/Scholarship/Headers/InputError.h
 
-/home/dan/CLionProjects/Scholarship/Sourses/UndergraduateStudent.cpp
+/home/dan/CLionProjects/Scholarship/Sourses/Student.cpp
 iomanip
 -
-../Headers/UndergraduateStudent.h
-/home/dan/CLionProjects/Scholarship/Headers/UndergraduateStudent.h
+string
+-
+stdlib.h
+-
+../Headers/InputError.h
+/home/dan/CLionProjects/Scholarship/Headers/InputError.h
+../Headers/Student.h
+/home/dan/CLionProjects/Scholarship/Headers/Student.h
+
+/home/dan/CLionProjects/Scholarship/Sourses/Subject.cpp
+iostream
+-
+iomanip
+-
+../Headers/Subject.h
+/home/dan/CLionProjects/Scholarship/Headers/Subject.h
 ../Headers/InputError.h
 /home/dan/CLionProjects/Scholarship/Headers/InputError.h
 

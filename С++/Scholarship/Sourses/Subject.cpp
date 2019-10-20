@@ -13,7 +13,7 @@ std::istream &operator>>(std::istream &is, Subject& sub) {
 }
 
 std::ostream &operator<<(std::ostream &os, Subject &sub) {
-    os << "|" << std::setw(11) << sub.subjectName;
+    os << "|" << std::setw(7) << sub.subjectName;
     os << "|" << std::setw(4) << sub.mark;
     return os;
 }

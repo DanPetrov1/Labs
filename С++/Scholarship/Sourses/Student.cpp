@@ -84,8 +84,8 @@ std::ostream &operator<<(std::ostream &os, Student &obj) {
     os << "|" << std::setw(6) << obj.group;
     os << "|" << std::setw(25) << obj.name;
     os << dynamic_cast<Session&>(obj);
-    os << "|" << std::setw(2) << obj.privilege;
-    os << "|" << std::setw(8) << obj.scholarship << "$|";
+    os << "|" << std::setw(3) << obj.privilege;
+    os << "|" << std::setw(10) << obj.scholarship << "$|";
     return os;
 }
 
@@ -98,16 +98,16 @@ void Student::setSpecialty(const std::string &specialty) {
 }
 
 void Student::table() {
-    std::cout << "|" << std::setw(3) << "№  ";
-    std::cout << "|" << std::setw(15) << "Факультет";
-    std::cout << "|" << std::setw(6) << "Группа";
-    std::cout << "|" << std::setw(25) << "Фамилия и имя  ";
-    std::cout << "|" << std::setw(5) << "Долги";
-    std::cout << "|" << std::setw(10) << "№ сессии";
-    std::cout << "|" << std::setw(10) << "Предмет";
-    std::cout << "|" << std::setw(4) << "Балл";
-    std::cout << "|" << std::setw(2) << "Пр";
-    std::cout << "|" << std::setw(9) << "Стипендия";
+    std::cout << "|" << std::setw(3) << "№";
+    std::cout << "|" << std::setw(15) << "Faculty";
+    std::cout << "|" << std::setw(6) << "Group";
+    std::cout << "|" << std::setw(25) << "Surname and name";
+    std::cout << "|" << std::setw(5) << "Debts";
+    std::cout << "|" << std::setw(9) << "№ session";
+    std::cout << "|" << std::setw(7) << "Subject";
+    std::cout << "|" << std::setw(4) << "Mark";
+    std::cout << "|" << std::setw(3) << "Pr.";
+    std::cout << "|" << std::setw(11) << "Scholarship";
     std::cout << "|" << std::endl;
 }
 

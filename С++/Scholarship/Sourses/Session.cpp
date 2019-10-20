@@ -22,7 +22,7 @@ void Session::setNumber(const int number) {
 
 std::ostream &operator<<(std::ostream &os, Session &session) {
     os << "|" << std::setw(5) << session.debt;
-    os << "|" << std::setw(8) << session.number;
+    os << "|" << std::setw(9) << session.number;
     os << dynamic_cast<Subject&>(session);
     return os;
 }
