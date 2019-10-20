@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/dan/CLionProjects/Lab4(Inheritance)/Headers/Business.h
+ostream
+-
 Businessman.h
 /home/dan/CLionProjects/Lab4(Inheritance)/Headers/Businessman.h
 Tourist.h
@@ -30,29 +32,15 @@ ostream
 Person.h
 /home/dan/CLionProjects/Lab4(Inheritance)/Headers/Person.h
 
-/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Business.cpp
-../Headers/Business.h
-/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Business.h
-
-/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Businessman.cpp
-../Headers/Businessman.h
-/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Businessman.h
-stdio_ext.h
-/home/dan/CLionProjects/Lab4(Inheritance)/Sources/stdio_ext.h
-string
+/home/dan/CLionProjects/Lab4(Inheritance)/main.cpp
+iostream
 -
-
-/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Person.cpp
-stdio_ext.h
--
-../Headers/Person.h
+Headers/Person.h
 /home/dan/CLionProjects/Lab4(Inheritance)/Headers/Person.h
-
-/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Tourist.cpp
-../Headers/Tourist.h
+Headers/Tourist.h
 /home/dan/CLionProjects/Lab4(Inheritance)/Headers/Tourist.h
-stdio_ext.h
-/home/dan/CLionProjects/Lab4(Inheritance)/Sources/stdio_ext.h
-string
--
+Headers/Businessman.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Businessman.h
+Headers/Business.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Business.h
 

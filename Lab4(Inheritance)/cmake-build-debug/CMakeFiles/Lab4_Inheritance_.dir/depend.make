@@ -18,5 +18,9 @@ CMakeFiles/Lab4_Inheritance_.dir/Sources/Tourist.cpp.o: ../Headers/Person.h
 CMakeFiles/Lab4_Inheritance_.dir/Sources/Tourist.cpp.o: ../Headers/Tourist.h
 CMakeFiles/Lab4_Inheritance_.dir/Sources/Tourist.cpp.o: ../Sources/Tourist.cpp
 
+CMakeFiles/Lab4_Inheritance_.dir/main.cpp.o: ../Headers/Business.h
+CMakeFiles/Lab4_Inheritance_.dir/main.cpp.o: ../Headers/Businessman.h
+CMakeFiles/Lab4_Inheritance_.dir/main.cpp.o: ../Headers/Person.h
+CMakeFiles/Lab4_Inheritance_.dir/main.cpp.o: ../Headers/Tourist.h
 CMakeFiles/Lab4_Inheritance_.dir/main.cpp.o: ../main.cpp
 

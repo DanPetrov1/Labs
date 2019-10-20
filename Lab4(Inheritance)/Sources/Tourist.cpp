@@ -5,9 +5,12 @@
 #include "../Headers/Tourist.h"
 #include "stdio_ext.h"
 #include <string>
+#include <iomanip>
 
-Tourist::Tourist(std::string surname, std::string name, int birthdayYear, int passportNumber, std::string date,
-        std::string country) : Person(surname, name, birthdayYear), border(date, country) {
+Tourist::Tourist(std::string surname, std::string name, int birthdayYear,
+        int passportNumber) : Person(surname, name, birthdayYear){
+    this->borderSize = 0;
+    this->border = nullptr;
 }
 
 int Tourist::getPassportNumber() const {
@@ -18,44 +21,70 @@ void Tourist::setPassportNumber(int passportNumber) {
     Tourist::passportNumber = passportNumber;
 }
 
-const Border &Tourist::getBorder() const {
+const Border *Tourist::getBorder() const {
     return border;
 }
 
-void Tourist::setBorder(const Border &border) {
+void Tourist::setBorder(Border *border) {
     Tourist::border = border;
 }
 
 std::istream &operator>>(std::istream &is, Tourist &tourist) {
     is >> dynamic_cast<Person&>(tourist);
-    is >> tourist.passportNumber;
     __fpurge(stdin);
-    is >> tourist.border.date;
-    is >> tourist.border.country;
+    is >> tourist.passportNumber;
+    std::cout << "Write the size of borders: ";
+    is >> tourist.borderSize;
+    tourist.border = new Border[tourist.borderSize];
+    is.get();
+    for (int i = 0; i < tourist.borderSize; ++i) {
+        is >> tourist.border[i].date;
+        is >> tourist.border[i].country;
+    }
     return is;
 }
 
 std::ostream &operator<<(std::ostream &os, const Tourist &tourist) {
-    os << static_cast<const Person &>(tourist) << "passportNumber: " << tourist.passportNumber << std::endl
-        << "border: " << tourist.border.date << " " << tourist.border.country << std::endl;
+    os << static_cast<const Person &>(tourist) << "passportNumber: " << tourist.passportNumber << std::endl;
+    os << std::setw(10) << "Date" << " | " << std::setw(10) << "Country" << std::endl;
+    for (int i = 0; i < tourist.borderSize; ++i) {
+        os << tourist.border[i].date << " - " << tourist.border[i].country << std::endl;
+    }
     return os;
 }
 
-const std::string &Tourist::getDate() const {
-    return this->border.date;
+const std::string &Tourist::getDate(int index) const {
+    if (index >= 0 || index < borderSize) {
+        return this->border[index].date;
+    } else {
+        return nullptr;
+    }
 }
 
-void Tourist::setDate(const std::string &date) {
-    this->border.date = date;
+void Tourist::setDate(const std::string &date, int index) {
+    if (index >= 0 || index < borderSize) {
+        this->border[index].date = date;
+    }
 }
 
-const std::string &Tourist::getCountry() const {
-    return this->border.country;
+const std::string &Tourist::getCountry(int index) const {
+    if (index >= 0 || index < borderSize) {
+        return this->border[index].country;
+    } else {
+        return nullptr;
+    }
 }
 
-void Tourist::setCountry(const std::string &country) {
-    this->border.country = country;
+void Tourist::setCountry(const std::string &country, int index) {
+    if (index >= 0 || index < borderSize) {
+        this->border[index].country = country;
+    }
 }
 
-Border::Border(std::string date, std::string country) : date(date), country(country) {
+int Tourist::getBorderSize() const {
+    return borderSize;
+}
+
+void Tourist::setBorderSize(int borderSize) {
+    Tourist::borderSize = borderSize;
 }

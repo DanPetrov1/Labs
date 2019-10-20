@@ -12,18 +12,16 @@
 
 class Business : public Businessman, public Tourist {
 private:
-    std::string address[10];
+    int addressSize;
+    std::string *address;
 public:
     explicit Business(std::string surname = "", std::string name = "", int birthdayYear = 0,
-             int licenceNumber = 0, std::string date = "", std::string country = "",
-             int passportNumber = 0, std::string date2 = "", std::string country2 = "",
-             std::string address[10] = {});
+             int licenceNumber = 0, int passportNumber = 0, std::string address[10] = {});
 
     const std::string *getAddress() const;
-    void setAddress(const std::string address[10]);
+    void setAddress(std::string *address);
 
     friend std::istream &operator>>(std::istream &is, Business &business);
-
     friend std::ostream &operator<<(std::ostream &os, const Business &business);
 };
 

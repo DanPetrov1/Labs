@@ -31,7 +31,7 @@ void Person::setBirthdayYear(int birthdayYear) {
 
 std::ostream &operator<<(std::ostream &os, const Person &person) {
     os << "surname: " << person.surname << std::endl << "name: " << person.name << std::endl
-        << " birthdayYear: " << person.birthdayYear << std::endl;
+        << "birthdayYear: " << person.birthdayYear << std::endl;
     return os;
 }
 

@@ -2,6 +2,7 @@
 #include "Headers/Person.h"
 #include "Headers/Tourist.h"
 #include "Headers/Businessman.h"
+#include "Headers/Business.h"
 
 int main() {
     Person person;
@@ -13,5 +14,8 @@ int main() {
     Businessman businessman;
     std::cin >> businessman;
     std::cout << businessman;
+    Business business;
+    std::cin >> business;
+    std::cout << business;
     return 0;
 }
