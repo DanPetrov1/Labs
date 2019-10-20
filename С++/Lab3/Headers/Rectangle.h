@@ -4,8 +4,10 @@
 #include "TwoDShape.h"
 
 class Rectangle : public TwoDShape {
+private:
+    int width;
 public:
-    explicit Rectangle(int length, int width) : TwoDShape(length, width) {};
+    explicit Rectangle(int length, int width) : width(width), TwoDShape(length) {};
     std::string type() final { return "Rectangle."; };
     double area() final { return length * width; };
     double perimeter() final { return 2 * (width + length); };

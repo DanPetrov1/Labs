@@ -7,8 +7,7 @@
 class Shape {
 public:
     virtual ~Shape() { std::cout << "Shape's destructor." << std::endl; };
-    virtual std::string type() { return "Undefined."; };
+    virtual std::string type() = 0;
 };
-
 
 #endif //LAB3_SHAPE_H

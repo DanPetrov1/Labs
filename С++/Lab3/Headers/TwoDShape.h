@@ -5,9 +5,9 @@
 
 class TwoDShape : public Shape {
 protected:
-    int length = 0, width = 0;
+    int length = 0;
 public:
-    TwoDShape(int length, int width) : length(length), width(width) {};
+    TwoDShape(int length) : length(length) {};
     std::string type() override { return "2D-shape"; }
     virtual double area() = 0;
     virtual double perimeter() = 0;

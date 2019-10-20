@@ -5,9 +5,9 @@
 
 class ThreeDShape : public Shape {
 protected:
-    int length = 0, width = 0, height = 0;
+    int length = 0;
 public:
-    ThreeDShape(int length, int width, int height) : length(length), width(width), height(height){};
+    explicit ThreeDShape(int length) : length(length){};
     std::string type() override { return "3D-shape"; }
     virtual double volume() = 0;
     virtual double coverageArea() = 0;

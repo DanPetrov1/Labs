@@ -4,8 +4,10 @@
 #include "ThreeDShape.h"
 
 class Parallelepiped : public ThreeDShape {
+private:
+    int width, height;
 public:
-    explicit Parallelepiped(int length, int width, int height) : ThreeDShape(length, width, height) {};
+    explicit Parallelepiped(int length, int width, int height) : width(width), height(height) , ThreeDShape(length) {};
     std::string type() final { return "Parallelepiped."; };
     double coverageArea() final { return 2 * (length * width + length * height + width * height);};
     double volume() final { return length * width * height; };

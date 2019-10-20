@@ -5,13 +5,11 @@
 #include "TwoDShape.h"
 
 class Circle : public TwoDShape {
-private:
-    int radius = 0;
 public:
-    explicit Circle(int radius) : radius(radius), TwoDShape(radius, radius){};
+    explicit Circle(int radius) : TwoDShape(radius){};
     std::string type() final { return "Circle."; };
-    double area() final { return 3.14 * pow(radius, 2); };
-    double perimeter() final { return 2 * 3.14 * radius; };
+    double area() final { return 3.14 * pow(length, 2); };
+    double perimeter() final { return 2 * 3.14 * length; };
     ~Circle() final { std::cout << "Circle's destructor." << std::endl; };
 };
 
