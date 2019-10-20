@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Lab4_Inheritance_.dir/main.cpp.o CMakeFiles/Lab4_Inheritance_.dir/Sources/Person.cpp.o CMakeFiles/Lab4_Inheritance_.dir/Sources/Tourist.cpp.o CMakeFiles/Lab4_Inheritance_.dir/Sources/Businessman.cpp.o CMakeFiles/Lab4_Inheritance_.dir/Sources/Business.cpp.o  -o Lab4_Inheritance_ 

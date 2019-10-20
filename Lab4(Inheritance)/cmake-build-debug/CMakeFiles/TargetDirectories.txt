@@ -1,0 +1,3 @@
+/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/CMakeFiles/Lab4_Inheritance_.dir
+/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/CMakeFiles/edit_cache.dir

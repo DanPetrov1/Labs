@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Lab4_Inheritance_"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab4_Inheritance_">
+				<Option output="/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Lab4_Inheritance_" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab4_Inheritance_"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab4_Inheritance_/fast">
+				<Option output="/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Lab4_Inheritance_" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab4_Inheritance_/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Business.h">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Businessman.h">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Person.h">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Tourist.h">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Business.cpp">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Businessman.cpp">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Person.cpp">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Tourist.cpp">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/main.cpp">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
