@@ -177,6 +177,33 @@ Sources/Businessman.cpp.s:
 	$(MAKE) -f CMakeFiles/Lab4_Inheritance_.dir/build.make CMakeFiles/Lab4_Inheritance_.dir/Sources/Businessman.cpp.s
 .PHONY : Sources/Businessman.cpp.s
 
+Sources/InputError.o: Sources/InputError.cpp.o
+
+.PHONY : Sources/InputError.o
+
+# target to build an object file
+Sources/InputError.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab4_Inheritance_.dir/build.make CMakeFiles/Lab4_Inheritance_.dir/Sources/InputError.cpp.o
+.PHONY : Sources/InputError.cpp.o
+
+Sources/InputError.i: Sources/InputError.cpp.i
+
+.PHONY : Sources/InputError.i
+
+# target to preprocess a source file
+Sources/InputError.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab4_Inheritance_.dir/build.make CMakeFiles/Lab4_Inheritance_.dir/Sources/InputError.cpp.i
+.PHONY : Sources/InputError.cpp.i
+
+Sources/InputError.s: Sources/InputError.cpp.s
+
+.PHONY : Sources/InputError.s
+
+# target to generate assembly for a file
+Sources/InputError.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab4_Inheritance_.dir/build.make CMakeFiles/Lab4_Inheritance_.dir/Sources/InputError.cpp.s
+.PHONY : Sources/InputError.cpp.s
+
 Sources/Person.o: Sources/Person.cpp.o
 
 .PHONY : Sources/Person.o
@@ -273,6 +300,9 @@ help:
 	@echo "... Sources/Businessman.o"
 	@echo "... Sources/Businessman.i"
 	@echo "... Sources/Businessman.s"
+	@echo "... Sources/InputError.o"
+	@echo "... Sources/InputError.i"
+	@echo "... Sources/InputError.s"
 	@echo "... Sources/Person.o"
 	@echo "... Sources/Person.i"
 	@echo "... Sources/Person.s"

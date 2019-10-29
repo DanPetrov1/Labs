@@ -4,6 +4,7 @@
 
 #include <stdio_ext.h>
 #include "../Headers/Person.h"
+#include "../Headers/InputError.h"
 
 const std::string &Person::getSurname() const {
     return this->surname;
@@ -39,6 +40,6 @@ std::istream &operator>>(std::istream &is, Person &person) {
     __fpurge(stdin);
     is >> person.surname;
     is >> person.name;
-    is >> person.birthdayYear;
+    person.birthdayYear = InputError::input(0, 2019);
     return is;
 }

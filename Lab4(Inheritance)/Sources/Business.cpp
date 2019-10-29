@@ -4,6 +4,7 @@
 
 #include "../Headers/Business.h"
 #include "stdio_ext.h"
+#include "../Headers/InputError.h"
 
 Business::Business(std::string surname, std::string name, int birthdayYear, int licenceNumber,
         int passportNumber, std::string address[10]) : Businessman(surname, name, birthdayYear,
@@ -20,7 +21,7 @@ void Business::setAddress(std::string *address) {
 
 std::istream &operator>>(std::istream &is, Business &business) {
     std::cout << "Write the number of addresses: ";
-    is >> business.addressSize;
+    business.addressSize = InputError::input(0, 100);
     __fpurge(stdin);
     is.get();
     business.address = new std::string[business.addressSize];

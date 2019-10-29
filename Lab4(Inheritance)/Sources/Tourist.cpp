@@ -4,6 +4,8 @@
 
 #include "../Headers/Tourist.h"
 #include "stdio_ext.h"
+#include "../Headers/InputError.h"
+#include "../Headers/MemoryError.h"
 #include <string>
 #include <iomanip>
 
@@ -29,13 +31,14 @@ void Tourist::setBorder(Border *border) {
     Tourist::border = border;
 }
 
+template <class T>
 std::istream &operator>>(std::istream &is, Tourist &tourist) {
     is >> dynamic_cast<Person&>(tourist);
     __fpurge(stdin);
-    is >> tourist.passportNumber;
+    tourist.passportNumber = InputError::input(100000, 999999);
     std::cout << "Write the size of borders: ";
-    is >> tourist.borderSize;
-    tourist.border = new Border[tourist.borderSize];
+    tourist.borderSize = InputError::input(0, 1000);
+    tourist.border = MemoryError<T>::getMemory(tourist.border, tourist.borderSize);
     is.get();
     for (int i = 0; i < tourist.borderSize; ++i) {
         is >> tourist.border[i].date;

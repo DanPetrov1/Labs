@@ -13,7 +13,7 @@ struct Border {
     std::string country = "";
 };
 
-class Tourist : public Person {
+class Tourist : public virtual Person {
 protected:
     int passportNumber = 0;
     int borderSize;
@@ -34,8 +34,9 @@ public:
     void setCountry(const std::string& country, int index);
 
     friend std::ostream &operator<<(std::ostream &os, const Tourist &tourist);
+    template <class T>
     friend std::istream &operator>>(std::istream &is, Tourist &tourist);
-    };
+};
 
 
 #endif //LAB4_INHERITANCE__TOURIST_H

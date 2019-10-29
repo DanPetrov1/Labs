@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Business.cpp" "/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/CMakeFiles/Lab4_Inheritance_.dir/Sources/Business.cpp.o"
   "/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Businessman.cpp" "/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/CMakeFiles/Lab4_Inheritance_.dir/Sources/Businessman.cpp.o"
+  "/home/dan/CLionProjects/Lab4(Inheritance)/Sources/InputError.cpp" "/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/CMakeFiles/Lab4_Inheritance_.dir/Sources/InputError.cpp.o"
   "/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Person.cpp" "/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/CMakeFiles/Lab4_Inheritance_.dir/Sources/Person.cpp.o"
   "/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Tourist.cpp" "/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/CMakeFiles/Lab4_Inheritance_.dir/Sources/Tourist.cpp.o"
   "/home/dan/CLionProjects/Lab4(Inheritance)/main.cpp" "/home/dan/CLionProjects/Lab4(Inheritance)/cmake-build-debug/CMakeFiles/Lab4_Inheritance_.dir/main.cpp.o"

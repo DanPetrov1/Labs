@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Lab4_Inheritance_.dir/Sources/Business.cpp.o"
   "CMakeFiles/Lab4_Inheritance_.dir/Sources/Businessman.cpp.o"
+  "CMakeFiles/Lab4_Inheritance_.dir/Sources/InputError.cpp.o"
   "CMakeFiles/Lab4_Inheritance_.dir/Sources/Person.cpp.o"
   "CMakeFiles/Lab4_Inheritance_.dir/Sources/Tourist.cpp.o"
   "CMakeFiles/Lab4_Inheritance_.dir/main.cpp.o"

@@ -14,7 +14,7 @@ struct Payment {
     std::string country;
 };
 
-class Businessman : Person {
+class Businessman : public virtual Person {
 protected:
     int licenceNumber;
     int paymentSize = 0;
@@ -34,6 +34,7 @@ public:
     const std::string& getCountry(int index) const;
     void setCountry(const std::string& country, int index);
 
+    template <class T>
     friend std::istream &operator>>(std::istream &is, Businessman &businessman);
     friend std::ostream &operator<<(std::ostream &os, const Businessman &businessman);
 };

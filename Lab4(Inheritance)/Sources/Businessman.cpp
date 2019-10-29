@@ -4,6 +4,8 @@
 
 #include "../Headers/Businessman.h"
 #include "stdio_ext.h"
+#include "../Headers/InputError.h"
+#include "../Headers/MemoryError.h"
 #include <string>
 #include <iomanip>
 
@@ -45,13 +47,14 @@ void Businessman::setCountry(const std::string &country, int index) {
     this->payment[index].country = country;
 }
 
+template <class T>
 std::istream &operator>>(std::istream &is, Businessman &businessman) {
     is >> dynamic_cast<Person&>(businessman);
     __fpurge(stdin);
-    is >> businessman.licenceNumber;
+    businessman.licenceNumber = InputError::input(100000, 999999);
     std::cout << "Write the number of payments: ";
-    is >> businessman.paymentSize;
-    businessman.payment = new Payment[businessman.paymentSize];
+    businessman.paymentSize = InputError::input(0, 1000);
+    businessman.payment = MemoryError<T>::getMemory(businessman.payment, businessman.paymentSize);
     is.get();
     for (int i = 0; i < businessman.paymentSize; ++i) {
         is >> businessman.payment[i].date;

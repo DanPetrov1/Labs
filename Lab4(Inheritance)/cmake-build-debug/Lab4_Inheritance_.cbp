@@ -88,6 +88,15 @@
 		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Businessman.h">
 			<Option target="Lab4_Inheritance_"/>
 		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Headers/InputError.h">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Headers/MemoryError.h">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Headers/MyException.h">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
 		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Person.h">
 			<Option target="Lab4_Inheritance_"/>
 		</Unit>
@@ -98,6 +107,9 @@
 			<Option target="Lab4_Inheritance_"/>
 		</Unit>
 		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Businessman.cpp">
+			<Option target="Lab4_Inheritance_"/>
+		</Unit>
+		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Sources/InputError.cpp">
 			<Option target="Lab4_Inheritance_"/>
 		</Unit>
 		<Unit filename="/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Person.cpp">
