@@ -3,6 +3,7 @@
 //
 
 #include <stdio_ext.h>
+#include <iomanip>
 #include "../Headers/Person.h"
 #include "../Headers/InputError.h"
 
@@ -31,8 +32,8 @@ void Person::setBirthdayYear(int birthdayYear) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Person &person) {
-    os << "surname: " << person.surname << std::endl << "name: " << person.name << std::endl
-        << "birthdayYear: " << person.birthdayYear << std::endl;
+    os << std::setw(10) << person.surname << "|" << std::setw(10) << person.name
+        << "|" << std::setw(7) << person.birthdayYear << "|";
     return os;
 }
 
@@ -42,4 +43,9 @@ std::istream &operator>>(std::istream &is, Person &person) {
     is >> person.name;
     person.birthdayYear = InputError::input(0, 2019);
     return is;
+}
+
+void Person::table() {
+    std::cout << std::setw(10) << "Surname" << "|"
+            << std::setw(10) << "Name" << "|" << "B. Year|" << std::endl;
 }

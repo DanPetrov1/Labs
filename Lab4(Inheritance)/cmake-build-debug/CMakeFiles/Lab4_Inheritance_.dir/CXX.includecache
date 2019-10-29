@@ -6,8 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Businessman.h
+ostream
+-
+Person.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Person.h
+
 /home/dan/CLionProjects/Lab4(Inheritance)/Headers/InputError.h
 string
+-
+MyException.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/MyException.h
+
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/MemoryError.h
+iostream
 -
 MyException.h
 /home/dan/CLionProjects/Lab4(Inheritance)/Headers/MyException.h
@@ -20,11 +32,37 @@ string
 iostream
 -
 
-/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Person.cpp
-stdio_ext.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Tourist.h
+ostream
 -
-../Headers/Person.h
+Person.h
 /home/dan/CLionProjects/Lab4(Inheritance)/Headers/Person.h
+
+/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Businessman.cpp
+../Headers/Businessman.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Businessman.h
+stdio_ext.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Sources/stdio_ext.h
 ../Headers/InputError.h
 /home/dan/CLionProjects/Lab4(Inheritance)/Headers/InputError.h
+../Headers/MemoryError.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/MemoryError.h
+string
+-
+iomanip
+-
+
+/home/dan/CLionProjects/Lab4(Inheritance)/Sources/Tourist.cpp
+../Headers/Tourist.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/Tourist.h
+stdio_ext.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Sources/stdio_ext.h
+../Headers/InputError.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/InputError.h
+../Headers/MemoryError.h
+/home/dan/CLionProjects/Lab4(Inheritance)/Headers/MemoryError.h
+string
+-
+iomanip
+-
 

@@ -37,6 +37,8 @@ public:
     template <class T>
     friend std::istream &operator>>(std::istream &is, Businessman &businessman);
     friend std::ostream &operator<<(std::ostream &os, const Businessman &businessman);
+
+    void table() override;
 };
 
 

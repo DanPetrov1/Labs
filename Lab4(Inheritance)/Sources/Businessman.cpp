@@ -65,7 +65,7 @@ std::istream &operator>>(std::istream &is, Businessman &businessman) {
 
 std::ostream &operator<<(std::ostream &os, const Businessman &businessman) {
     os << static_cast<const Person &>(businessman)
-    << "licenceNumber: " << businessman.licenceNumber << std::endl;
+    << businessman.licenceNumber << std::setw(10) << "|";
     os << std::setw(10) << "Date" << " | " << std::setw(10) << "Country" << std::endl;
     for (int i = 0; i < businessman.paymentSize; ++i) {
         os << businessman.payment[i].date << " - " << businessman.payment[i].country << std::endl;
@@ -79,4 +79,9 @@ int Businessman::getPaymentSize() const {
 
 void Businessman::setPaymentSize(int paymentSize) {
     Businessman::paymentSize = paymentSize;
+}
+
+void Businessman::table() {
+    std::cout << std::setw(10) << "Surname" << "|"
+            << std::setw(10) << "Name" << "|B. Year|" << std::setw(10) << "License" << "|" << std::endl;
 }

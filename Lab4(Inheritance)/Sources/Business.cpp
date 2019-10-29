@@ -2,6 +2,7 @@
 // Created by dan on 19.10.19.
 //
 
+#include <iomanip>
 #include "../Headers/Business.h"
 #include "stdio_ext.h"
 #include "../Headers/InputError.h"
@@ -20,10 +21,12 @@ void Business::setAddress(std::string *address) {
 }
 
 std::istream &operator>>(std::istream &is, Business &business) {
+    is >> dynamic_cast<Person&>(business);
+    business.licenceNumber = InputError::input(100000, 999999);
+    business.passportNumber = InputError::input(100000, 999999);
     std::cout << "Write the number of addresses: ";
     business.addressSize = InputError::input(0, 100);
     __fpurge(stdin);
-    is.get();
     business.address = new std::string[business.addressSize];
     for (int i = 0; i < business.addressSize; ++i) {
         getline(is, business.address[i]);
@@ -31,9 +34,21 @@ std::istream &operator>>(std::istream &is, Business &business) {
     return is;
 }
 
-std::ostream &operator<<(std::ostream &os, const Business &business) {
+std::ostream &operator<<(std::ostream &os, Business &business) {
     for (int i = 0; i < business.addressSize; ++i) {
-        std::cout << business.address[i] << std::endl;
+        os << std::setw(10) << business.address[i] << "|";
+        if (i == 0) {
+            os << std::setw(10) << business.surname << "|" << std::setw(10) << business.name << "|"
+                    << std::setw(7) << business.birthdayYear << "|" << std::setw(10) << business.passportNumber <<
+            "|" << std::setw(10) << business.licenceNumber << "|";
+        }
+        os << std::endl;
     }
     return os;
+}
+
+void Business::table() {
+    std::cout << std::setw(10) << "Address" << "|" << std::setw(10) << "Surname" << "|"
+    << std::setw(10) << "Name"<< "|B. Year|" << std::setw(10) << "License" << "|" << std::setw(10) << "Passport"
+    << "|" << std::endl;
 }

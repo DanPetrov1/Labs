@@ -48,12 +48,17 @@ std::istream &operator>>(std::istream &is, Tourist &tourist) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Tourist &tourist) {
-    os << static_cast<const Person &>(tourist) << "passportNumber: " << tourist.passportNumber << std::endl;
+    os << static_cast<const Person &>(tourist) << tourist.passportNumber << std::setw(10) << "|" << std::endl;
     os << std::setw(10) << "Date" << " | " << std::setw(10) << "Country" << std::endl;
     for (int i = 0; i < tourist.borderSize; ++i) {
         os << tourist.border[i].date << " - " << tourist.border[i].country << std::endl;
     }
     return os;
+}
+
+void Tourist::table() {
+    std::cout << std::setw(10) << "Surname" << "|"
+            << std::setw(10) << "Name" << "|B. Year|" << std::setw(10) << "Passport" << "|" << std::endl;
 }
 
 const std::string &Tourist::getDate(int index) const {

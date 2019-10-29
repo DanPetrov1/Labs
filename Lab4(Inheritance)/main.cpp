@@ -5,7 +5,7 @@
 #include "Headers/Business.h"
 
 int main() {
-    Person person;
+    /*Person person;
     std::cin >> person;
     std::cout << person;
     Tourist tourist;
@@ -13,9 +13,14 @@ int main() {
     std::cout << tourist;
     Businessman businessman;
     std::cin >> businessman;
-    std::cout << businessman;
-    Business business;
-    std::cin >> business;
-    std::cout << business;
+    std::cout << businessman;*/
+    Business* business = new Business[2];
+    for (int i = 0; i < 2; ++i) {
+        std::cin >> business[i];
+    }
+    business->table();
+    for (int j = 0; j < 2; ++j) {
+        std::cout << business[j];
+    }
     return 0;
 }

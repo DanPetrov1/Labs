@@ -26,6 +26,8 @@ public:
 
     friend std::istream &operator>>(std::istream &is, Person& person);
     friend std::ostream &operator<<(std::ostream &os, const Person &person);
+
+    virtual void table();
 };
 
 

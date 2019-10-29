@@ -22,7 +22,9 @@ public:
     void setAddress(std::string *address);
 
     friend std::istream &operator>>(std::istream &is, Business &business);
-    friend std::ostream &operator<<(std::ostream &os, const Business &business);
+    friend std::ostream &operator<<(std::ostream &os, Business &business);
+
+    void table() final;
 };
 
 
