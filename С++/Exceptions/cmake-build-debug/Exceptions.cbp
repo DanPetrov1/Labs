@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Exceptions"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/danpe/CLionProjects/Exceptions/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Exceptions">
+				<Option output="C:/Users/danpe/CLionProjects/Exceptions/cmake-build-debug/Exceptions.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/danpe/CLionProjects/Exceptions/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 Exceptions"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Exceptions/fast">
+				<Option output="C:/Users/danpe/CLionProjects/Exceptions/cmake-build-debug/Exceptions.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/danpe/CLionProjects/Exceptions/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 Exceptions/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/danpe/CLionProjects/Exceptions/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/danpe/CLionProjects/Exceptions/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\danpe\CLionProjects\Exceptions\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Headers/Business.h">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Headers/Businessman.h">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Headers/InputError.h">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Headers/MemoryError.h">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Headers/MyException.h">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Headers/Person.h">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Headers/Tourist.h">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Sources/Business.cpp">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Sources/Businessman.cpp">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Sources/InputError.cpp">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Sources/Person.cpp">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/Sources/Tourist.cpp">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/main.cpp">
+			<Option target="Exceptions"/>
+		</Unit>
+		<Unit filename="C:/Users/danpe/CLionProjects/Exceptions/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
