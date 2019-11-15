@@ -1,0 +1,3 @@
+C:/Users/danpe/CLionProjects/KursachKarpeichik/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/danpe/CLionProjects/KursachKarpeichik/cmake-build-debug/CMakeFiles/KursachKarpeichik.dir
+C:/Users/danpe/CLionProjects/KursachKarpeichik/cmake-build-debug/CMakeFiles/edit_cache.dir
