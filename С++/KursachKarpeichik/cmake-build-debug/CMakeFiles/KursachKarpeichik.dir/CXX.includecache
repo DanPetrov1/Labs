@@ -11,14 +11,36 @@ iostream
 -
 vector
 -
+string
+-
 List.h
 C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/List.h
 User.h
 C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/User.h
+ListException.h
+C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/ListException.h
+InputError.h
+C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/InputError.h
+File.h
+C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/File.h
 
 C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/File.h
 List.h
 C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/List.h
+Specialist.h
+C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/Specialist.h
+Supervisor.h
+C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/Supervisor.h
+Trainee.h
+C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/Trainee.h
+iostream
+-
+string
+-
+fstream
+-
+cstring
+-
 
 C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/InputError.h
 iostream
@@ -34,6 +56,8 @@ C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/List.h
 Algorithm.h
 C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/Algorithm.h
 iostream
+-
+string
 -
 InputError.h
 C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/InputError.h
@@ -77,6 +101,12 @@ iostream
 -
 string
 -
+
+C:/Users/danpe/CLionProjects/KursachKarpeichik/Sources/User.cpp
+../Headers/User.h
+C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/User.h
+../Headers/InputError.h
+C:/Users/danpe/CLionProjects/KursachKarpeichik/Headers/InputError.h
 
 C:/Users/danpe/CLionProjects/KursachKarpeichik/main.cpp
 iostream

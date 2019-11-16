@@ -33,6 +33,8 @@ std::ostream &operator<<(std::ostream &os, const Supervisor &supervisor) {
 std::istream &operator>>(std::istream &is, Supervisor &supervisor) {
     std::cout << "Введите номер отдела данного руководителя: ";
     supervisor.departmentNumber = InputError::InputNumber();
-    is >> static_cast<Specialist&>(supervisor);
+    std::cout << "Проходил ли сотрудник школу переподготовки на руководителя? (1. Да. 0. Нет.) ";
+    supervisor.retraining = InputError::Input(0, 1);
+    is >> dynamic_cast<Specialist&>(supervisor);
     return is;
 }

@@ -33,7 +33,7 @@ std::istream &operator>>(std::istream &is, Trainee &trainee) {
     std::cout << "Введите номер группы стажёра: ";
     trainee.group = InputError::Input(100000, 999999);
     std::cout << "Введите количество заданий, выполненных стажёром: ";
-    trainee.group = InputError::Input(0, 1000);
-    is >> static_cast<Salary&>(trainee);
+    trainee.numberOfCompletedTasks = InputError::Input(0, 1000);
+    is >> dynamic_cast<Salary&>(trainee);
     return is;
 }

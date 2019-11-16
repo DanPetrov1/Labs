@@ -28,6 +28,7 @@ public:
     T& operator[](int num);
     Node<T>* begin();
     Node<T>* end();
+    void sort(int type);
     void output();
 };
 
@@ -39,6 +40,7 @@ void List<T>::pushHead(T obj) {
         head->next = nullptr;
         head->previous = nullptr;
         tail = head;
+        amount++;
     } else {
         auto *node = new Node<T>;
         node->data = obj;
@@ -59,6 +61,7 @@ void List<T>::pushTail(T input_object) {
         head->next = nullptr;
         head->previous = nullptr;
         tail = head;
+        amount++;
         return;
     }
     auto *node = new Node<T>;
@@ -67,6 +70,7 @@ void List<T>::pushTail(T input_object) {
     node->previous = tail;
     tail->next = node;
     tail = node;
+    amount++;
 }
 
 //Удаление от головы
@@ -137,5 +141,63 @@ void List<T>::output() {
 
 template<class T>
 List<T>::~List() { while (this->head) { this->popHead(); } }
+
+template<class T>
+void List<T>::sort(int type) {
+    switch (type) {
+        case 1: {
+            for (Node<T> *tmp = this->head; tmp->next != nullptr; tmp = tmp->next) {
+                for (Node<T> * another = this->tail; another != tmp; another = another->previous) {
+                    if (tmp->data.getBankBook() > another->data.getBankBook()) {
+                        auto *buf1 = new Node<T>;
+                        buf1->data = tmp->data;
+                        tmp->data = another->data;
+                        another->data = buf1->data;
+                    }
+                }
+            }
+            break;
+        }
+        case 2: {
+            for (Node<T> *tmp = this->head; tmp->next != this->tail; tmp = tmp->next) {
+                for (Node<T> * another = this->tail; another != tmp; another = another->previous) {
+                    if (tmp->data.getBankBook() > another->data.getBankBook()) {
+                        auto *buf1 = new Node<T>;
+                        buf1->data = tmp->data;
+                        tmp->data = another->data;
+                        another->data = buf1->data;
+                    }
+                }
+            }
+            break;
+        }
+        case 3: {
+            for (Node<T> *tmp = this->head; tmp->next != this->tail; tmp = tmp->next) {
+                for (Node<T> * another = this->tail; another != tmp; another = another->previous) {
+                    if (tmp->data.getSalary() > another->data.getSalary()) {
+                        auto *buf1 = new Node<T>;
+                        buf1->data = tmp->data;
+                        tmp->data = another->data;
+                        another->data = buf1->data;
+                    }
+                }
+            }
+            break;
+        }
+        case 4: {
+            for (Node<T> *tmp = this->head; tmp->next != this->tail; tmp = tmp->next) {
+                for (Node<T> * another = this->tail; another != tmp; another = another->previous) {
+                    if (tmp->data.getSalary() < another->data.getSalary()) {
+                        auto *buf1 = new Node<T>;
+                        buf1->data = tmp->data;
+                        tmp->data = another->data;
+                        another->data = buf1->data;
+                    }
+                }
+            }
+            break;
+        }
+    }
+}
 
 #endif //KURSACHKARPEICHIK_LIST_H

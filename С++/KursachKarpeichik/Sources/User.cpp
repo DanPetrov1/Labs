@@ -1,25 +1,24 @@
+#define KEY 5
 #include "../Headers/User.h"
 #include "../Headers/InputError.h"
 
-User::User(char *username, char *password, bool admin) : admin(admin) {
-    strcpy_s(this->username, username);
-    strcpy_s(this->password, password);
+User::User(std::string username, std::string password, bool admin) : username(username), password(password) , admin(admin) {
 }
 
-const char *User::getUsername() const {
+const std::string &User::getUsername() const {
     return username;
 }
 
-void User::setUsername(const char *username) {
-    strcpy_s(this->username, username);
+void User::setUsername(const std::string &username) {
+    this->username = username;
 }
 
-const char *User::getPassword() const {
+const std::string &User::getPassword() const {
     return password;
 }
 
-void User::setPassword(const char *password) {
-    strcpy_s(this->password, password);
+void User::setPassword(const std::string &password) {
+    this->password = password;
 }
 
 bool User::isAdmin() const {
@@ -40,8 +39,20 @@ std::istream &operator>>(std::istream &is, User &user) {
     std::cout << "Введите имя пользователя: ";
     is >> user.username;
     std::cout << "Введите пароль: ";
-    is >> user.password;
-    std::cout << "Является ли данный пользователь администратором? (1. Да. 2. Нет.)" << std::endl;
+    char BUFFER[20];
+    std::cin >> BUFFER;
+    for (int j = 0; BUFFER[j] != '\0'; ++j) {
+        BUFFER[j] = BUFFER[j] + j * KEY;
+    }
+    user.password = std::string(BUFFER);
+    std::cout << "Является ли данный пользователь администратором? (1. Да. 0. Нет.)" << std::endl;
     user.admin = bool(InputError::Input(0, 1));
     return is;
+}
+
+User &User::operator=(const User &user) {
+    this->username = user.username;
+    this->password = user.password;
+    this->admin = user.admin;
+    return *this;
 }

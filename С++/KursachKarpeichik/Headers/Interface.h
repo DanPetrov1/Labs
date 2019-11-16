@@ -4,6 +4,7 @@
 #include "List.h"
 #include "Algorithm.h"
 #include <iostream>
+#include <string>
 #include "InputError.h"
 #include "ListException.h"
 
@@ -22,28 +23,28 @@ void Interface<T>::menu(List<T>& list) {
     std::vector<int> place;
     int select = 0;
     do {
-        system("cls");
+        //system("cls");
         std::cout << "Вас приветствует система персонала компании!" << std::endl;
         std::cout << "Выберите действие, которое хотите совершить : " << std::endl;
-        std::cout << "1. Добавить специалиста в систему" << std::endl;
-        std::cout << "2. Посмотреть список специалистов" << std::endl;
-        std::cout << "3. Удалить последнего специалиста из системы" << std::endl;
-        std::cout << "4. Изменить данные о конкретном специалисте" << std::endl;
-        std::cout << "5. Отмена предыдущего действия со специалистами" << std::endl;
-        std::cout << "6. Отсортировать список специалистов" << std::endl;
+        std::cout << "1. Добавить сотрудника в систему" << std::endl;
+        std::cout << "2. Посмотреть список сотрудников" << std::endl;
+        std::cout << "3. Удалить последнего сотрудника из системы" << std::endl;
+        std::cout << "4. Изменить данные о конкретном сотруднике" << std::endl;
+        std::cout << "5. Отмена предыдущего действия с сотрудниками" << std::endl;
+        std::cout << "6. Отсортировать список сотрудников" << std::endl;
         std::cout << "0. Выход из программы" << std::endl;
         try {
             select = InputError::Input(0, 6);
             switch (select) {
-                case 1: //Добавить студента
+                case 1:
                 {
-                    system("cls");
+                    //system("cls");
                     Algorithm<T>::add(list, ReturnPrev, action);
                     break;
                 }
-                case 2: //Посмотреть список студентов
+                case 2:
                 {
-                    system("cls");
+                    //system("cls");
                     if (list.size() == 0) {
                         throw ListException(1);
                     } else {
@@ -53,27 +54,27 @@ void Interface<T>::menu(List<T>& list) {
                     }
                     break;
                 }
-                case 3: //Удалить последнего студента из системы
+                case 3:
                 {
-                    system("cls");
+                    //system("cls");
                     Algorithm<T>::remove(list, ReturnPrev, action);
                     break;
                 }
-                case 4: //Изменить данные о конкретном студенте
+                case 4:
                 {
-                    system("cls");
+                    //system("cls");
                     Algorithm<T>::update(list, ReturnPrev, action, place);
                     break;
                 }
-                case 5: //Отмена предыдущего действия со студентом
+                case 5:
                 {
-                    system("cls");
+                    //system("cls");
                     Algorithm<T>::cancel(list, ReturnPrev, action, place);
                     break;
                 }
-                case 6: //Отсортировать список студентов
+                case 6:
                 {
-                    system("cls");
+                    //system("cls");
                     Algorithm<T>::sort(list, ReturnPrev, action, place);
                     break;
                 }
@@ -92,9 +93,8 @@ void Interface<T>::menu(List<T>& list) {
 template<class T>
 User &Interface<T>::authorization() {
     int select = 0;
-    User currentUser;
     do {
-        system("cls");
+        //system("cls");
         std::cout << "Авторизация в систему контроля рабочего персонала!" << std::endl;
         std::cout << "Выберите действие, которое хотите совершить : " << std::endl;
         std::cout << "1. Авторизация в систему" << std::endl;
@@ -103,9 +103,9 @@ User &Interface<T>::authorization() {
         select = InputError::Input(1, 3);
         switch (select) {
             case 1: {
-                currentUser = Algorithm<User>::authorization();
-                if (strcmp(currentUser.getUsername(), "")) {
-                    return currentUser;
+                User *currentUser = new User(Algorithm<User>::authorization());
+                if (currentUser->getUsername() != "") {
+                    return *currentUser;
                 }
                 break;
             }
@@ -120,7 +120,104 @@ User &Interface<T>::authorization() {
 
 template<class T>
 void Interface<T>::adminMenu(List<T>& list) {
-
+    List<User> userList;
+    File<User>::openUser(userList, "users.txt");
+    std::vector<T> ReturnPrev;
+    std::vector<int> action;
+    std::vector<User> ReturnPrevForUsers;
+    std::vector<int> actionOfUsers;
+    std::vector<int> place;
+    int select = 0;
+    do {
+        //system("cls");
+        std::cout << "Вас приветствует система персонала компании!" << std::endl;
+        std::cout << "Выберите действие, которое хотите совершить : " << std::endl;
+        std::cout << "1. Добавить сотрудника в систему" << std::endl;
+        std::cout << "2. Посмотреть список сотрудников" << std::endl;
+        std::cout << "3. Удалить последнего сотрудника из системы" << std::endl;
+        std::cout << "4. Изменить данные о конкретном сотруднике" << std::endl;
+        std::cout << "5. Отмена предыдущего действия с сотрудниками" << std::endl;
+        std::cout << "6. Отсортировать список сотрудников" << std::endl;
+        std::cout << "7. Добавить пользователя" << std::endl;
+        std::cout << "8. Просмотреть список пользователей" << std::endl;
+        std::cout << "9. Удалить пользователя" << std::endl;
+        std::cout << "0. Выход из программы" << std::endl;
+        try {
+            select = InputError::Input(0, 9);
+            switch (select) {
+                case 1:
+                {
+                    //system("cls");
+                    Algorithm<T>::add(list, ReturnPrev, action);
+                    break;
+                }
+                case 2:
+                {
+                    //system("cls");
+                    if (list.size() == 0) {
+                        throw ListException(1);
+                    } else {
+                        list.output();
+                        std::cout << std::endl;
+                        system("pause");
+                    }
+                    break;
+                }
+                case 3:
+                {
+                    //system("cls");
+                    Algorithm<T>::remove(list, ReturnPrev, action);
+                    break;
+                }
+                case 4:
+                {
+                    //system("cls");
+                    Algorithm<T>::update(list, ReturnPrev, action, place);
+                    break;
+                }
+                case 5:
+                {
+                    //system("cls");
+                    Algorithm<T>::cancel(list, ReturnPrev, action, place);
+                    break;
+                }
+                case 6:
+                {
+                    //system("cls");
+                    Algorithm<T>::sort(list, ReturnPrev, action, place);
+                    break;
+                }
+                case 7: {
+                    //system("cls");
+                    Algorithm<User>::add(userList, ReturnPrevForUsers, actionOfUsers);
+                    break;
+                }
+                case 8: {
+                    //system("cls");
+                    if (userList.size() == 0) {
+                        throw ListException(1);
+                    } else {
+                        userList.output();
+                        std::cout << std::endl;
+                        system("pause");
+                    }
+                    break;
+                }
+                case 9: {
+                    //system("cls");
+                    Algorithm<User>::remove(userList, ReturnPrevForUsers, actionOfUsers);
+                    break;
+                }
+            }
+        }
+        catch (ListException e) {
+            e.ErrorText();
+            system("pause");
+            std::cin.sync();
+            std::cin.clear();
+            rewind(stdin);
+        }
+    } while (select != 0);
 }
 
 

@@ -1,11 +1,11 @@
 #include "../Headers/Specialist.h"
 #include "../Headers/InputError.h"
-#include <string>
+#include <cstring>
 #include <iostream>
 
 Specialist::Specialist(int salary, int bankBook, int numberOfProjects, int workExperience, char *specialSkills) :
     Salary(salary, bankBook), numberOfProjects(numberOfProjects), workExperience(workExperience) {
-    strcpy_s(this->specialSkills, specialSkills);
+    strcpy(this->specialSkills, specialSkills);
 }
 
 int Specialist::getNumberOfProjects() const {
@@ -29,7 +29,7 @@ const char *Specialist::getSpecialSkills() const {
 }
 
 void Specialist::setSpecialSkills(const char *specialSkills) {
-    strcpy_s(Specialist::specialSkills, specialSkills);
+    strcpy(Specialist::specialSkills, specialSkills);
 }
 
 std::ostream &operator<<(std::ostream &os, const Specialist &specialist) {
@@ -47,6 +47,6 @@ std::istream &operator>>(std::istream &is, Specialist &specialist) {
     rewind(stdin);
     std::cout << "Введите особые умения специалиста: ";
     is >> specialist.specialSkills;
-    is >> static_cast<Salary&>(specialist);
+    is >> dynamic_cast<Salary&>(specialist);
     return is;
 }

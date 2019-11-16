@@ -12,7 +12,7 @@ protected:
     char specialSkills[50];
 public:
     Specialist(int salary = 0, int bankBook = 0, int numberOfProjects = 0, int workExperience = 0,
-            char *specialSkills = "0");
+            char *specialSkills = "");
 
     int getNumberOfProjects() const;
     void setNumberOfProjects(int numberOfProjects);

@@ -7,14 +7,19 @@
 #include "Headers/Trainee.h"
 
 int main() {
-    system("chcp 65001");
+    SetConsoleOutputCP(CP_UTF8);
     int select;
     User user = Interface<User>::authorization();
-    if (!strcmp(user.getUsername(), "")) {
+    if (user.getUsername().empty()) {
         return 0;
     }
     if (user.isAdmin()) {
         while (true) {
+            std::cout << "Выберите данные для работы с ними:" << std::endl;
+            std::cout << "1. Специалисты компании." << std::endl;
+            std::cout << "2. Начальники компании." << std::endl;
+            std::cout << "3. Стажёры компании." << std::endl;
+            std::cout << "4. Выход." << std::endl;
             select = InputError::Input(1, 4);
             switch (select) {
                 case 1: {
@@ -33,9 +38,9 @@ int main() {
                 }
                 case 3: {
                     List<Trainee> list;
-                    File<Trainee>::openSupervisor(list, "trainee.txt");
+                    File<Trainee>::openTrainee(list, "trainee.txt");
                     Interface<Trainee>::adminMenu(list);
-                    File<Trainee>::saveSupervisor(list, "trainee.txt");
+                    File<Trainee>::saveTrainee(list, "trainee.txt");
                     break;
                 }
                 case 4: {
@@ -45,27 +50,32 @@ int main() {
         }
     } else {
         while (true) {
+            std::cout << "Выберите данные для работы с ними:" << std::endl;
+            std::cout << "1. Специалисты компании." << std::endl;
+            std::cout << "2. Начальники компании." << std::endl;
+            std::cout << "3. Стажёры компании." << std::endl;
+            std::cout << "4. Выход." << std::endl;
             select = InputError::Input(1, 4);
             switch (select) {
                 case 1: {
                     List<Specialist> list;
                     File<Specialist>::openSpecialist(list, "specialist.txt");
-                    Interface<Specialist>::adminMenu(list);
+                    Interface<Specialist>::menu(list);
                     File<Specialist>::saveSpecialist(list, "specialist.txt");
                     break;
                 }
                 case 2: {
                     List<Supervisor> list;
                     File<Supervisor>::openSupervisor(list, "supervisor.txt");
-                    Interface<Supervisor>::adminMenu(list);
+                    Interface<Supervisor>::menu(list);
                     File<Supervisor>::saveSupervisor(list, "supervisor.txt");
                     break;
                 }
                 case 3: {
                     List<Trainee> list;
-                    File<Trainee>::openSupervisor(list, "trainee.txt");
-                    Interface<Trainee>::adminMenu(list);
-                    File<Trainee>::saveSupervisor(list, "trainee.txt");
+                    File<Trainee>::openTrainee(list, "trainee.txt");
+                    Interface<Trainee>::menu(list);
+                    File<Trainee>::saveTrainee(list, "trainee.txt");
                     break;
                 }
                 case 4: {

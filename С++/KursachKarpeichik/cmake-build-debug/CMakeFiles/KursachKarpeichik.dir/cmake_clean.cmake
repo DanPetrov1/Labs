@@ -8,8 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/KursachKarpeichik.dir/main.cpp.obj"
   "KursachKarpeichik.exe"
   "KursachKarpeichik.exe.manifest"
-  "KursachKarpeichik.lib"
   "KursachKarpeichik.pdb"
+  "libKursachKarpeichik.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

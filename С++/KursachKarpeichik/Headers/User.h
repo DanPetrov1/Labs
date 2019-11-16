@@ -6,18 +6,20 @@
 
 class User {
 private:
-    char username[20];
-    char password[20];
+    std::string username;
+    std::string password;
     bool admin;
 public:
-    explicit User(char *username = "", char *password = "", bool admin = false);
+    explicit User(std::string username = "", std::string password = "", bool admin = false);
 
-    const char *getUsername() const;
-    void setUsername(const char *username);
-    const char *getPassword() const;
-    void setPassword(const char *password);
+    const std::string &getUsername() const;
+    void setUsername(const std::string &username);
+    const std::string &getPassword() const;
+    void setPassword(const std::string &password);
     bool isAdmin() const;
     void setAdmin(bool admin);
+
+    User& operator=(const User& user);
 
     friend std::ostream &operator<<(std::ostream &os, const User &user);
     friend std::istream &operator>>(std::istream &is, User &user);

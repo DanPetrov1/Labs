@@ -11,7 +11,7 @@ private:
     bool retraining;
 public:
     Supervisor(int salary = 0, int bankBook = 0, int numberOfProjects = 0, int workExperience = 0,
-               char *specialSkills = "0", int departmentNumber = 0, bool retraining = false);
+               char *specialSkills = "", int departmentNumber = 0, bool retraining = false);
 
     int getDepartmentNumber() const;
     void setDepartmentNumber(int departmentNumber);

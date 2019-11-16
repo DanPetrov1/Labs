@@ -1,10 +1,16 @@
 #ifndef KURSACHKARPEICHIK_ALGORITHM_H
 #define KURSACHKARPEICHIK_ALGORITHM_H
 
+#define KEY 5
+
 #include <iostream>
 #include <vector>
+#include <string>
 #include "List.h"
 #include "User.h"
+#include "ListException.h"
+#include "InputError.h"
+#include "File.h"
 
 template <class T>
 class Algorithm {
@@ -20,7 +26,7 @@ public:
 
 template<class T>
 void Algorithm<T>::add(List<T>& list, std::vector<T>& returnPrev, std::vector<int>& action) {
-    system("cls");
+    //system("cls");
     T tmp;
     std::cin >> tmp;
     list.pushTail(tmp);
@@ -31,7 +37,7 @@ void Algorithm<T>::add(List<T>& list, std::vector<T>& returnPrev, std::vector<in
 
 template<class T>
 void Algorithm<T>::remove(List<T> &list, std::vector<T> &returnPrev, std::vector<int> &action) {
-    system("cls");
+    //system("cls");
     if (list.size() == 0) {
         throw ListException(1);
     } else {
@@ -45,7 +51,7 @@ void Algorithm<T>::remove(List<T> &list, std::vector<T> &returnPrev, std::vector
 
 template<class T>
 void Algorithm<T>::update(List<T> &list, std::vector<T> &returnPrev, std::vector<int> &action, std::vector<int> &place) {
-    system("cls");
+    //system("cls");
     if (!list.size()) {
         throw ListException(1);
     }
@@ -64,21 +70,25 @@ void Algorithm<T>::update(List<T> &list, std::vector<T> &returnPrev, std::vector
 
 template<class T>
 void Algorithm<T>::sort(List<T> &list, std::vector<T> &returnPrev, std::vector<int> &action, std::vector<int> &place) {
-    system("cls");
+    //system("cls");
     if (!list.size()) {
         throw ListException(1);
     }
     list.output();
     std::cout << std::endl;
-    std::cout << "Выберите по какому признаку отсортировать: ";
-    int tempNum = InputError::Input(1, list.size());
-
+    std::cout << "Выберите по какому признаку отсортировать:" << std::endl;
+    std::cout << "1. По лицевому счёту по возрастанию." << std::endl;
+    std::cout << "2. По лицевому счёту по убыванию." << std::endl;
+    std::cout << "3. По зарплате по возрастанию." << std::endl;
+    std::cout << "4. По зарплате по убыванию." << std::endl;
+    int type = InputError::Input(1, 4);
+    list.sort(type);
 }
 
 template<class T>
 void Algorithm<T>::cancel(List<T>& list, std::vector<T>& returnPrev, std::vector<int>& action, std::vector<int>& place) {
     if (!action.size()) {
-        system("cls");
+        //system("cls");
         throw ListException(2);
     }
     switch (action.back()) {
@@ -105,21 +115,26 @@ void Algorithm<T>::cancel(List<T>& list, std::vector<T>& returnPrev, std::vector
 }
 
 template<class T>
-User &Algorithm<T>::authorization() {
+User& Algorithm<T>::authorization() {
     List<User> users;
     File<User>::openUser(users, "users.txt");
-    char username[20], password[20];
-    std::cout << "";
+    char BUFFER[20];
+    std::string username;
+    std::cout << "Введите логин: ";
     std::cin >> username;
-    std::cout << "";
-    std::cin >> password;
+    std::cout << "Введите пароль: ";
+    std::cin >> BUFFER;
+    for (int j = 0; BUFFER[j] != '\0'; ++j) {
+        BUFFER[j] = BUFFER[j] + j * KEY;
+    }
+    std::string password(BUFFER);
     for (int i = 0; i < users.size(); i++) {
-        if (!strcmp(users[i].getUsername(), username) && !strcmp(users[i].getPassword(), password)) {
+        if (users[i].getUsername() == username && users[i].getPassword() == password) {
             return users[i];
         }
     }
     std::cout << "Неверный пользователь или пароль!" << std::endl;
-    return User("", "", false);
+    return *(new User("", "", false));
 }
 
 template<class T>
@@ -129,15 +144,14 @@ void Algorithm<T>::registration() {
     User newUser;
     std::cin >> newUser;
     for (int i = 0; i < users.size(); i++) {
-        if (!strcmp(users.operator[](i).getUsername(), newUser.getUsername()) && !strcmp(users.operator[](i).getPassword(), newUser.getPassword())
-                    && newUser.isAdmin() != users.operator[](i).isAdmin()) {
+        if (users[i].getUsername() == newUser.getUsername() && users[i].getPassword() == newUser.getPassword()
+                    && newUser.isAdmin() != users[i].isAdmin()) {
             std::cout << "Данный пользователь уже существует!" << std::endl;
             return;
         }
     }
     users.pushTail(newUser);
     File<User>::saveUser(users, "users.txt");
-    return;
 }
 
 
